@@ -42,6 +42,7 @@ import jscamp from "../assets/jscamp.jpg";
 import juriQuote from "../assets/juriQuote.png";
 import abdellatif from "../assets/abdellatif.png";
 import ghProject from "../assets/ghProject.png";
+import codementor from "../assets/codementor.png";
 
 preloader({
   magicGif,
@@ -66,9 +67,9 @@ require("normalize.css");
 require("../assets/code-style.css");
 
 const theme = createTheme({
-  primary: "#211056",
-  secondary: "#a296f7",
-  tertiary: "#7becff",
+  primary: "#1D2934",
+  secondary: "#6F767D",
+  tertiary: "#B5FEE1",
   quaternary: "#FEFEFE"
 }, {
   primary: "Montserrat",
@@ -107,10 +108,10 @@ export default class Presentation extends React.Component {
 
 
         <Slide transition={["fade"]} bgColor="primary">
-          <Text size={1} fit lineHeight={1} textColor="secondary">
+          <Text size={1} fit lineHeight={1} textColor="tertiary">
             beeman 🐝
           </Text>
-          <Text size={1} fit lineHeight={1} textColor="secondary">
+          <Text size={1} fit lineHeight={1} textColor="tertiary">
             Bram Borggreve
           </Text>
 
@@ -121,13 +122,16 @@ export default class Presentation extends React.Component {
             <Fill style={{ flex: 20 }}>
               <List bgColor="primary" textColor="secondary" style={{ listStyleType: "none" }}>
                 <ListItem style={{ marginBottom: 20 }}>
-                  👨‍💻 Freelance Developer
+                  👨‍💻 Software Developer
                 </ListItem>
                 <ListItem style={{ marginBottom: 20 }}>
-                  👨‍🏫 Egghead Instructor
+                  ⚡️ StackBlitz
                 </ListItem>
                 <ListItem style={{ marginBottom: 20 }}>
-                  📖 Packt Author
+                  👨‍🏫 Egghead
+                </ListItem>
+                <ListItem style={{ marginBottom: 20 }}>
+                  📖 Packt
                 </ListItem>
                 <ListItem style={{ marginBottom: 20 }}>
                   🇳🇱 The Netherlands
@@ -155,7 +159,7 @@ export default class Presentation extends React.Component {
 
 
         <Slide transition={["fade"]} bgColor="primary">
-          <Text size={1} fit caps lineHeight={1} textColor="secondary">
+          <Text size={1} fit caps lineHeight={1} textColor="tertiary">
             Follow me!
           </Text>
           <Text size={4} lineHeight={1} textColor="secondary">
@@ -174,6 +178,20 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="primary">
+          <Text size={1} fit caps lineHeight={1} textColor="secondary">
+            Where to find work?
+          </Text>
+          <Image src={codementor} style={{ width: '100%', marginTop: 50, marginBottom: 50 }} />
+          <List>
+            <ListItem padding={15}>🕺 Live Mentorship.</ListItem>
+            <ListItem padding={15}>🤓 Freelance Projects.</ListItem>
+            <ListItem padding={15}>💰 Weekly payment in USD.</ListItem>
+            <ListItem padding={15}>🤑 Apply here: &nbsp;
+              <a href="https://goo.gl/5Roa5v" target="_blank" style={{ color: '#B5FEE1' }}>goo.gl/5Roa5v</a>
+            </ListItem>
+          </List>
+        </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={4} caps fit textColor="secondary">
@@ -181,7 +199,7 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Appear>
-            <Text size={4} lineHeight={2} fit caps textColor="secondary">
+            <Text size={4} lineHeight={2} fit caps textColor="tertiary">
               The Awesome way!
             </Text>
           </Appear>
@@ -306,7 +324,9 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps fit>Reactive Forms</Heading>
-          <Heading size={6} textColor="tertiary" fit>More Fields === More Markup</Heading>
+          <Heading size={6} textColor="tertiary" caps fit>
+            More Fields === More Markup
+          </Heading>
         </Slide>
 
 
@@ -323,12 +343,16 @@ export default class Presentation extends React.Component {
           <Heading size={4} caps fit textColor="secondary">
             There must be a fix!
           </Heading>
-          <Text size={6} caps fit textColor="tertiary">
-            Don't define <b>how</b>
-          </Text>
-          <Text size={6} caps fit textColor="tertiary">
-            Define <b>what</b>!
-          </Text>
+          <Appear>
+            <Text size={6} caps fit textColor="tertiary">
+              Don't define <b>how</b>
+            </Text>
+          </Appear>
+          <Appear>
+            <Text size={6} caps fit textColor="tertiary">
+              Define <b>what</b>!
+            </Text>
+          </Appear>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -341,17 +365,13 @@ export default class Presentation extends React.Component {
           bgColor="primary"
           textColor="secondary"
           transition={["fade"]}
-          lang="ts"
-          code={require("raw-loader!../assets/code/formly-field.ts")}
+          lang="html"
+          code={require("raw-loader!../assets/code/formly-template.html")}
           ranges={[
-            { loc: [0, 100], title: "Formly Class" },
-            { loc: [3, 12] },
-            { loc: [4, 5] },
-            { loc: [5, 6] },
-            { loc: [6, 11] },
-            { loc: [7, 8] },
-            { loc: [8, 9] },
-            { loc: [9, 10] }
+            { loc: [0, 100], title: "Formly Template" },
+            { loc: [0, 2] },
+            { loc: [7, 13] },
+            { loc: [3, 6] }
           ]}
         />
 
@@ -359,12 +379,19 @@ export default class Presentation extends React.Component {
           bgColor="primary"
           textColor="secondary"
           transition={["fade"]}
-          lang="html"
-          code={require("raw-loader!../assets/code/formly-template.html")}
+          lang="ts"
+          code={require("raw-loader!../assets/code/formly-field.ts")}
           ranges={[
-            { loc: [0, 100], title: "Formly Template" },
-            { loc: [3, 14] },
-            { loc: [3, 6] }
+            { loc: [0, 100], title: "Formly Class" },
+            { loc: [1, 2] },
+            { loc: [3, 4] },
+            { loc: [5, 14] },
+            { loc: [6, 7] },
+            { loc: [7, 8] },
+            { loc: [8, 13] },
+            { loc: [9, 10] },
+            { loc: [10, 11] },
+            { loc: [11, 12] }
           ]}
         />
 
@@ -503,7 +530,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <BlockQuote>
             <Quote>
               Code is not for the computer.<br/>
@@ -515,9 +542,25 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
           <Heading size={1} caps fit textColor="secondary">
+            One more thing!
+          </Heading>
+          <Text size={4} caps fit lineHeight={1} textColor="tertiary">
+            Code Your Future
+          </Text>
+          <Text size={4} caps fit lineHeight={1} textColor="tertiary">
+            Colombia
+          </Text>
+          <Text size={6} lineHeight={1} textColor="secondary">
+            <i className="fa fa-fw fa-twitter"/> CYF_CO
+          </Text>
+        </Slide>
+
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
+          <Heading size={1} caps fit textColor="tertiary">
             THANK YOU!
           </Heading>
-          <Text size={4} lineHeight={1} textColor="secondary">
+          <Text size={4} lineHeight={1} textColor="tertiary">
             <br/>
             <br/>
 
