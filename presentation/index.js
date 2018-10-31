@@ -28,37 +28,19 @@ import "prismjs/components/prism-typescript";
 // Import theme
 import createTheme from "spectacle/lib/themes/default";
 
-import magicGif from "../assets/magic.gif";
 import beemanJpg from "../assets/beeman.jpg";
 import beemanWorldPng from "../assets/beemanWorld.png";
-import babyTiredGif from "../assets/baby-tired.gif";
-import boyDancingGif from "../assets/boyDancing.gif";
-import boredElaineGif from "../assets/bored-elaine.gif";
-import completeTemplate from "../assets/completeTemplate.png";
 import nomadDream from "../assets/nomadDream.jpg";
 import nomadReality from "../assets/nomadReality.jpg";
-import awesomeWay from "../assets/awesomeWay.gif";
-import jscamp from "../assets/jscamp.jpg";
-import juriQuote from "../assets/juriQuote.png";
-import abdellatif from "../assets/abdellatif.png";
-import ghProject from "../assets/ghProject.png";
-import codementor from "../assets/codementor.png";
+import cyfco from "../assets/cyfco.png";
+import observableQuote from "../assets/observable-quote.png";
 
 preloader({
-  magicGif,
   beemanJpg,
   beemanWorldPng,
-  babyTiredGif,
-  boyDancingGif,
-  boredElaineGif,
-  completeTemplate,
   nomadDream,
   nomadReality,
-  awesomeWay,
-  jscamp,
-  juriQuote,
-  abdellatif,
-  ghProject,
+  observableQuote,
 });
 
 
@@ -69,7 +51,7 @@ require("../assets/code-style.css");
 const theme = createTheme({
   primary: "#1D2934",
   secondary: "#6F767D",
-  tertiary: "#B5FEE1",
+  tertiary: "#1F9AC5",
   quaternary: "#FEFEFE"
 }, {
   primary: "Montserrat",
@@ -96,13 +78,10 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
           <Text size={1} fit caps lineHeight={1} textColor="tertiary">
-            Take your <b>Reactive</b> forms
-          </Text>
-          <Text size={1} fit caps lineHeight={1} textColor="tertiary" style={{ marginTop: 30 }}>
-            out of your <b>Templates</b>!
+            RxJS
           </Text>
           <Text size={4} fit caps lineHeight={2} textColor="secondary">
-            Angular Forms the Awesome way!
+            From zero to hero!
           </Text>
         </Slide>
 
@@ -125,13 +104,10 @@ export default class Presentation extends React.Component {
                   👨‍💻 Software Developer
                 </ListItem>
                 <ListItem style={{ marginBottom: 20 }}>
-                  ⚡️ StackBlitz
+                  👨‍🏫 Instructor
                 </ListItem>
                 <ListItem style={{ marginBottom: 20 }}>
-                  👨‍🏫 Egghead
-                </ListItem>
-                <ListItem style={{ marginBottom: 20 }}>
-                  📖 Packt
+                  📖 Author
                 </ListItem>
                 <ListItem style={{ marginBottom: 20 }}>
                   🇳🇱 The Netherlands
@@ -178,379 +154,100 @@ export default class Presentation extends React.Component {
           </Text>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary">
-          <Text size={1} fit caps lineHeight={1} textColor="secondary">
-            Where to find work?
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={4} caps fit textColor="secondary">
+            Why RxJS?
+          </Heading>
+
+          <Text size={4} lineHeight={2} fit caps textColor="tertiary">
+            What problem does it solve?
           </Text>
-          <Image src={codementor} style={{ width: '100%', marginTop: 50, marginBottom: 50 }} />
-          <List>
-            <ListItem padding={15}>🕺 Live Mentorship.</ListItem>
-            <ListItem padding={15}>🤓 Freelance Projects.</ListItem>
-            <ListItem padding={15}>💰 Weekly payment in USD.</ListItem>
-            <ListItem padding={15}>🤑 Apply here: &nbsp;
-              <a href="https://goo.gl/5Roa5v" target="_blank" style={{ color: '#B5FEE1' }}>goo.gl/5Roa5v</a>
+
+          <Appear>
+            <Text size={4} lineHeight={2} fit caps textColor="tertiary">
+              Asynchronicity!
+            </Text>
+          </Appear>
+        </Slide>
+
+        <CodeSlide
+          bgColor="primary"
+          textColor="secondary"
+          transition={["fade"]}
+          lang="ts"
+          code={require("raw-loader!../assets/code/callbacks.ts")}
+          ranges={[
+            { loc: [0, 100], title: "Callbacks" },
+            { loc: [0, 9] },
+            { loc: [10, 19] },
+          ]}
+        />
+
+        <CodeSlide
+          bgColor="primary"
+          textColor="secondary"
+          transition={["fade"]}
+          lang="ts"
+          code={require("raw-loader!../assets/code/promises.ts")}
+          ranges={[
+            { loc: [0, 100], title: "Promises" },
+            { loc: [0, 15] },
+            { loc: [16, 22] },
+          ]}
+        />
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Image src={observableQuote} style={{ width: "100%" }}/>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={4} caps fit textColor="secondary">
+            Observables
+          </Heading>
+
+          <List bgColor="primary" textColor="tertiary">
+            <ListItem style={{ marginBottom: 20 }}>
+              Return a stream of one or more values
+            </ListItem>
+            <ListItem style={{ marginBottom: 20 }}>
+              Can be transformed through operators
+            </ListItem>
+            <ListItem style={{ marginBottom: 20 }}>
+              Are lazy:
+            </ListItem>
+            <ListItem style={{ marginBottom: 20 }}>
+              You need to subscribe()
+            </ListItem>
+            <ListItem style={{ marginBottom: 20 }}>
+              You need to unsubscribe()
             </ListItem>
           </List>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={4} caps fit textColor="secondary">
-            Forms in Angular
+            Let's get started!
           </Heading>
 
-          <Appear>
-            <Text size={4} lineHeight={2} fit caps textColor="tertiary">
-              The Awesome way!
-            </Text>
-          </Appear>
-          <Appear>
-            <Image src={awesomeWay} style={{ width: "100%" }}/>
-          </Appear>
-        </Slide>
-
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Text size={1} fit caps lineHeight={1} textColor="tertiary">
-            Reactive Forms are Awesome!
+          <Text size={4} lineHeight={2} fit caps textColor="tertiary">
+            Clone the repo from GitHub
           </Text>
-          <Appear>
-            <Heading size={4} caps lineHeight={2} textColor="secondary">
-              But...
-            </Heading>
-          </Appear>
-        </Slide>
 
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps fit>Reactive Forms</Heading>
-          <List>
-            <Appear>
-              <ListItem padding={15}>📚 Lots of template code.</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>🔄 Template / class dependency.</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>💑 Married to the CSS framework.</ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>♻️ Little re-usability.</ListItem>
-            </Appear>
-          </List>
-        </Slide>
-
-        <CodeSlide
-          bgColor="primary"
-          textColor="secondary"
-          transition={["fade"]}
-          lang="html"
-          code={require("raw-loader!../assets/code/form-empty.html")}
-          ranges={[
-            { loc: [0, 100], title: "Form Template" },
-            { loc: [0, 2] },
-            { loc: [3, 4] },
-            { loc: [5, 10] }
-          ]}
-        />
-
-        <CodeSlide
-          bgColor="primary"
-          textColor="secondary"
-          transition={["fade"]}
-          lang="ts"
-          code={require("raw-loader!../assets/code/form-empty.ts")}
-          ranges={[
-            { loc: [0, 100], title: "Form Class" },
-            { loc: [1, 2] },
-            { loc: [3, 6] }
-          ]}
-        />
-
-        <CodeSlide
-          bgColor="primary"
-          textColor="secondary"
-          transition={["fade"]}
-          lang="html"
-          code={require("raw-loader!../assets/code/form-reactive-basic.html")}
-          ranges={[
-            { loc: [0, 100], title: "Reactive Form Template" },
-            { loc: [0, 2] },
-            { loc: [11, 16] },
-            { loc: [3, 10] },
-            { loc: [3, 4], note: "Bootstrap specific" },
-            { loc: [4, 5], note: "Field label" },
-            { loc: [5, 6], note: "Field type" },
-            { loc: [6, 7], note: "Bootstrap specific" },
-            { loc: [7, 8], note: "Field id" },
-            { loc: [8, 9], note: "Field placeholder" }
-          ]}
-        />
-
-        <CodeSlide
-          bgColor="primary"
-          textColor="secondary"
-          transition={["fade"]}
-          lang="ts"
-          code={require("raw-loader!../assets/code/form-reactive-basic.ts")}
-          ranges={[
-            { loc: [0, 100], title: "Reactive Form Class" },
-            { loc: [1, 2] },
-            { loc: [13, 16] },
-            { loc: [4, 5] },
-            { loc: [8, 11] }
-          ]}
-        />
-
-        <CodeSlide
-          bgColor="primary"
-          textColor="secondary"
-          transition={["fade"]}
-          lang="html"
-          code={require("raw-loader!../assets/code/form-reactive-advanced.html")}
-          ranges={[
-            { loc: [0, 100], title: "With Validation" },
-            { loc: [3, 17] },
-            { loc: [9, 10] },
-            { loc: [14, 15] },
-            { loc: [11, 17] }
-          ]}
-        />
-
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Image src={boredElaineGif} style={{ width: "60%" }}/>
-        </Slide>
-
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="secondary" caps fit>Reactive Forms</Heading>
-          <Heading size={6} textColor="tertiary" caps fit>
-            More Fields === More Markup
-          </Heading>
-        </Slide>
-
-
-        <Slide transition={["fade"]} bgColor="black" textColor="tertiary">
-          <Image src={completeTemplate} style={{ height: "600px" }}/>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Image src={babyTiredGif} style={{ width: "100%" }}/>
-        </Slide>
-
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={4} caps fit textColor="secondary">
-            There must be a fix!
-          </Heading>
-          <Appear>
-            <Text size={6} caps fit textColor="tertiary">
-              Don't define <b>how</b>
-            </Text>
-          </Appear>
-          <Appear>
-            <Text size={6} caps fit textColor="tertiary">
-              Define <b>what</b>!
-            </Text>
-          </Appear>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={1} caps fit textColor="secondary">
-            ngx-formly
-          </Heading>
-        </Slide>
-
-        <CodeSlide
-          bgColor="primary"
-          textColor="secondary"
-          transition={["fade"]}
-          lang="html"
-          code={require("raw-loader!../assets/code/formly-template.html")}
-          ranges={[
-            { loc: [0, 100], title: "Formly Template" },
-            { loc: [0, 2] },
-            { loc: [7, 13] },
-            { loc: [3, 6] }
-          ]}
-        />
-
-        <CodeSlide
-          bgColor="primary"
-          textColor="secondary"
-          transition={["fade"]}
-          lang="ts"
-          code={require("raw-loader!../assets/code/formly-field.ts")}
-          ranges={[
-            { loc: [0, 100], title: "Formly Class" },
-            { loc: [1, 2] },
-            { loc: [3, 4] },
-            { loc: [5, 14] },
-            { loc: [6, 7] },
-            { loc: [7, 8] },
-            { loc: [8, 13] },
-            { loc: [9, 10] },
-            { loc: [10, 11] },
-            { loc: [11, 12] }
-          ]}
-        />
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={1} caps fit textColor="secondary">
-            ngx-formly
-          </Heading>
-
-          <Text size={4} caps fit textColor="tertiary">
-            DEMO TIME
+          <Text size={4} lineHeight={2} fit caps textColor="tertiary">
+            Or run it in StackBlitz
           </Text>
-        </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={1} caps fit textColor="secondary">
-            ngx-formly
-          </Heading>
-
-          <Text size={4} caps fit textColor="tertiary">
-            AWESOME
+          <Text size={4} lineHeight={2} fit caps textColor="tertiary">
+            <a href="https://github.com/beeman" target="_blank" style={{color: 'white'}}>
+              https://github.com/beeman
+            </a>
           </Text>
-        </Slide>
 
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Image src={babyTiredGif} style={{ width: "100%" }}/>
-        </Slide>
-
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Image src={boyDancingGif} style={{ height: "100%" }}/>
-        </Slide>
-
-
-        {/* JSCAMP IMAGE */}
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Image src={jscamp} style={{ width: "100%" }}/>
-        </Slide>
-
-
-        {/* Juri Quote Image */}
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Image src={juriQuote} style={{ width: "100%" }}/>
-        </Slide>
-
-        {/* SHOW QUOTE */}
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={1} caps fit textColor="secondary">
-            why ngx-formly?
-          </Heading>
-          <List>
-            <Appear>
-              <ListItem padding={15}>
-                Opinionated, declaritive, composable.
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>
-                Highly extensible.
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>
-                Low barrier to entry.
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>
-                Built on top of Reactive Forms.
-              </ListItem>
-            </Appear>
-          </List>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={1} caps fit textColor="secondary">
-            <i className="fa fa-fw fa-github"/>
-            formly-js/ngx-formly
-          </Heading>
-
-          <Layout style={{ background: 'white', padding: 40, marginTop: 40 }} >
-            <Fill>
-              <Image src={ghProject} style={{ marginRight: 40 }} />
-            </Fill>
-            <Fill>
-              <Image src={abdellatif} style={{ marginLeft: 40 }} />
-            </Fill>
-          </Layout>
-        </Slide>
-
-        {/* About Formly (oss + maintainer) */}
-
-        {/* How to get Formly (ng add) */}
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={1} caps fit textColor="secondary">
-            Getting started
-          </Heading>
-          <Text size={4} fit lineHeight={2} textColor="tertiary">
-            $ ng add @ngx-formly/schematics
-          </Text>
-          <Text size={4} fit lineHeight={2} textColor="tertiary">
-            --ui-theme=bootstrap|material|ionic|nativescript|...
-          </Text>
-        </Slide>
-
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-          <Heading size={1} caps fit textColor="secondary">
-            Using ngx-formly
-          </Heading>
-          <List>
-            <Appear>
-              <ListItem padding={15}>
-                Write a custom abstraction!
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>
-                Add custom elements and validators.
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>
-                Create default fields and fields groups.
-              </ListItem>
-            </Appear>
-            <Appear>
-              <ListItem padding={15}>
-                Share with teams, projects or online!
-              </ListItem>
-            </Appear>
-          </List>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
-          <BlockQuote>
-            <Quote>
-              Code is not for the computer.<br/>
-              It's for other human beings.
-            </Quote>
-            <Cite textColor="primary">Kyle Simpson - @getify</Cite>
-          </BlockQuote>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Heading size={1} caps fit textColor="secondary">
-            One more thing!
-          </Heading>
-          <Text size={4} caps fit lineHeight={1} textColor="tertiary">
-            Code Your Future
-          </Text>
-          <Text size={4} caps fit lineHeight={1} textColor="tertiary">
-            Colombia
-          </Text>
-          <Text size={6} lineHeight={1} textColor="secondary">
+          <Image src={cyfco} style={{ width: '100%', marginTop: 50, marginBottom: 50 }} />
+          <Text size={2} lineHeight={1} textColor="primary">
             <i className="fa fa-fw fa-twitter"/> CYF_CO
           </Text>
         </Slide>
@@ -573,79 +270,4 @@ export default class Presentation extends React.Component {
       </Deck>
     );
   }
-}
-
-
-{/*<Slide transition={["fade"]} bgColor="tertiary">*/
-}
-{/*<Heading size={6} textColor="secondary" caps>Typography</Heading>*/
-}
-{/*<Heading size={1} textColor="secondary">Heading 1</Heading>*/
-}
-{/*<Heading size={2} textColor="secondary">Heading 2</Heading>*/
-}
-{/*<Heading size={3} textColor="secondary">Heading 3</Heading>*/
-}
-{/*<Heading size={4} textColor="secondary">Heading 4</Heading>*/
-}
-{/*<Heading size={5} textColor="secondary">Heading 5</Heading>*/
-}
-{/*<Text size={6} textColor="secondary">Standard text</Text>*/
-}
-{/*</Slide>*/
-}
-
-
-{/*<Slide transition={["fade"]} bgColor="primary" textColor="tertiary">*/
-}
-{/*<Heading size={6} textColor="secondary" caps>Standard List</Heading>*/
-}
-{/*<List>*/
-}
-{/*<ListItem>Item 1</ListItem>*/
-}
-{/*<ListItem>Item 2</ListItem>*/
-}
-{/*<ListItem>Item 3</ListItem>*/
-}
-{/*<ListItem>Item 4</ListItem>*/
-}
-{/*</List>*/
-}
-{/*</Slide>*/
-}
-
-{/*<Slide transition={["fade"]} bgColor="primary" textColor="tertiary">*/
-}
-{/*<Heading size={6} textColor="secondary" caps>Standard List</Heading>*/
-}
-{/*<List>*/
-}
-{/*<Appear>*/
-}
-{/*<ListItem>Item 1</ListItem>*/
-}
-{/*</Appear>*/
-}
-{/*<Appear>*/
-}
-{/*<ListItem>Item 2</ListItem>*/
-}
-{/*</Appear>*/
-}
-{/*<Appear>*/
-}
-{/*<ListItem>Item 3</ListItem>*/
-}
-{/*</Appear>*/
-}
-{/*<Appear>*/
-}
-{/*<ListItem>Item 4</ListItem>*/
-}
-{/*</Appear>*/
-}
-{/*</List>*/
-}
-{/*</Slide>*/
 }
