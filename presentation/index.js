@@ -245,6 +245,39 @@ export default class Presentation extends React.Component {
 
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={4} caps fit textColor="secondary">
+            ¿Qué más?
+          </Heading>
+
+          <Text size={6} lineHeight={2} textColor="tertiary" target="_blank">
+            <a href="https://learnrxjs.io" target="_blank" style={{ margin: '20px 0', textDecoration: 'none', color: 'white' }}>
+              learnrxjs.io
+            </a>
+          </Text>
+          <Text size={6} lineHeight={2} textColor="tertiary">
+            <a href="http://rxmarbles.com" target="_blank" style={{ margin: '20px 0', textDecoration: 'none', color: 'white' }}>
+              rxmarbles.com
+            </a>
+          </Text>
+          <Text size={6} lineHeight={2} textColor="tertiary">
+            <a href="https://github.com/d3lm/ngx-drag-to-select" target="_blank" style={{ margin: '20px 0', textDecoration: 'none', color: 'white' }}>
+              d3lm/ngx-drag-to-select
+            </a>
+          </Text>
+          <Text size={6} lineHeight={2} textColor="tertiary">
+            <a href="https://github.com/NetanelBasal/ngx-auto-unsubscribe" target="_blank" style={{ margin: '20px 0', textDecoration: 'none', color: 'white' }}>
+              NetanelBasal/ngx-auto-unsubscribe
+            </a>
+          </Text>
+          <Text size={6} lineHeight={2} textColor="tertiary">
+            <a href="https://github.com/NetanelBasal/ngx-take-until-destroy" target="_blank" style={{ margin: '20px 0', textDecoration: 'none', color: 'white' }}>
+              NetanelBasal/ngx-take-until-destroy
+            </a>
+          </Text>
+        </Slide>
+
+
         <Slide transition={["fade"]} bgColor="tertiary" textColor="primary">
           <Image src={cyfco} style={{ width: '100%', marginTop: 50, marginBottom: 50 }} />
           <Text size={2} lineHeight={1} textColor="primary">
