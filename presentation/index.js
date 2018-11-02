@@ -77,7 +77,7 @@ export default class Presentation extends React.Component {
       <Deck transition={["fade"]} transitionDuration={500} theme={theme}>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="secondary">
-          <Text size={1} fit caps lineHeight={1} textColor="tertiary">
+          <Text size={1} fit lineHeight={1} textColor="tertiary">
             RxJS
           </Text>
           <Text size={4} fit caps lineHeight={2} textColor="secondary">
